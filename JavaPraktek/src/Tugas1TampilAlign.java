@@ -1,13 +1,20 @@
 import java.util.Scanner;
 
-public class Tugas1 {
+public class Tugas1TampilAlign {
     // spc : Variabel untuk mengatur lebar Console
     private static int spc = 70;
     private static String name, nim, date, address;
 
     public static void main(String[] args) {
         // Input Data
-        name = "Azis Rosyid"; nim = "22520241011"; date = "Yogyakarta, 24 Mei 2004"; address = "Kragilan RT 01/RW 08, Sinduadi, Mlati, Sleman, DIY";
+        // Nama
+        name = "Azis Rosyid"; 
+        // NIM
+        nim = "22520241011"; 
+        // Tempat Tanggal Lahir
+        date = "Yogyakarta, 24 Mei 2004"; 
+        // Alamat
+        address = "Kragilan RT 01/RW 08, Sinduadi, Mlati, Sleman, DIY";
 
         // Jika ingin Input Data menggunakan Console maka tambahkan method : inputConsole();
         // inputConsole();
