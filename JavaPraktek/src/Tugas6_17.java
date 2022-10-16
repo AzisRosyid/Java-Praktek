@@ -2,9 +2,20 @@ import java.util.Scanner;
 
 public class Tugas6_17 {
     public static void main(String[] args) {
-        int a = 0, i = 1, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
+        int a = 0, i = 0, max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, jumlah = 0;
         System.out.println("Program Nilai Mahasiswa\n");
         while(true) {
+            try {
+                System.out.printf("Masukkan Jumlah Data : ");
+                Scanner scnJ = new Scanner(System.in);
+                jumlah = scnJ.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("\nJumlah harus berformat nomor!\n");
+            }
+        }
+
+        for(i = 1; i <= jumlah; i++) {
             while(true) {
                 try {
                     System.out.printf("Masukkan Nilai ke-" + i + " : ");
@@ -13,21 +24,16 @@ public class Tugas6_17 {
                     if(input > max) max = input;
                     if(input < min) min = input;
                     a += input;
-                    i++;
                     break;
                 } catch (Exception e) {
                     System.out.println("\nInput harus berformat nomor!\n");
                 }
             }
-            System.out.printf("Mau memasukkan nilai lagi [y/t] ? ");
-            Scanner scnC = new Scanner(System.in);
-            String confirm = scnC.next();
-            if(confirm.equals("t")) break;
         }       
         
-        System.out.println("Nilai Total : " + a);
+        System.out.println("\nNilai Total : " + a);
         System.out.println("Nilai Minimal : " + min);
         System.out.println("Nilai Maksimal : " + max);
-        System.out.println("Nilai Rata-Rata : " + (double)a/(double)i);
+        System.out.println("Nilai Rata-Rata : " + (double)a/(double)jumlah);
     }
 }
