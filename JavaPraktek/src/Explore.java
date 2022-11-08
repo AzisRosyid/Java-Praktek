@@ -54,28 +54,32 @@ public class Explore {
             if (input.equals("n")) break;
         }
         int spc = 2;
-        int namaLength = 11 + spc, jumlahLength = 6 + spc,  hargaLength = 12 + spc, noLength = String.valueOf(namaBarang.size()).length() > 2? String.valueOf(namaBarang.size()).length() + spc: 2 + spc, totalLength = 11 + spc;
-        for (int j = 0; j < namaBarang.size(); j++) {
-            if (namaBarang.get(j).length() > namaLength) namaLength = namaBarang.get(j).length() + spc;
-            if (String.valueOf(jumlahBarang.get(j)).length() > jumlahLength) jumlahLength = String.valueOf(jumlahBarang.get(j)).length() + spc;
-            if (String.valueOf(hargaBarang.get(j)).length() > hargaLength) hargaLength = String.valueOf(hargaBarang.get(j)).length() + spc;
-            if (String.valueOf((hargaBarang.get(j) * jumlahBarang.get(j))).length() > totalLength) hargaLength = String.valueOf((hargaBarang.get(j) * jumlahBarang.get(j))).length() + spc;
+        int namaLength = 11 + spc, jumlahLength = 6 + spc,  hargaLength = 12 + spc, noLength = String.valueOf(namaBarang.size()).length() > 2? String.valueOf(namaBarang.size()).length() + 1 + spc: 2 + spc, totalLength = 11 + spc;
+        double total = 0, bayar = 0, kembalian = 0;
+        for (int i = 0; i < namaBarang.size(); i++) {
+            if (namaBarang.get(i).length() > namaLength) namaLength = namaBarang.get(i).length() + spc;
+            if (String.valueOf(jumlahBarang.get(i)).length() > jumlahLength) jumlahLength = String.valueOf(jumlahBarang.get(i)).length() + spc;
+            if (String.valueOf(hargaBarang.get(i)).length() > hargaLength) hargaLength = String.valueOf(hargaBarang.get(i)).length() + spc;
+            double totalHarga = hargaBarang.get(i) * jumlahBarang.get(i);
+            if (String.valueOf((hargaBarang.get(i) * jumlahBarang.get(i))).length() > totalLength) hargaLength = String.valueOf(totalHarga).length() + spc;
+            total += totalHarga;
         }
+        if (String.valueOf(total).length() > totalLength) totalLength = String.valueOf(total).length();
         String columns = String.format("|%" + -noLength + "s|%" + -namaLength + "s|%" + -jumlahLength + "s|%" + -hargaLength + "s|%" + -totalLength + "s|", "NO", "Nama Barang", "Jumlah", "Harga Satuan", "Harga Total");
         int columnsLength = columns.length();
         System.out.printf("\n\n%" + (columnsLength/2-6) + "sNOTA PEMBELIAN\n\n" + "Tanggal : " + LocalDate.now() + "\n", "");
         System.out.println("=".repeat(columnsLength) + "\n" + columns + "\n" + "=".repeat(columnsLength));
-        double total = 0, bayar = 0;
-        for (int i = 0; i < namaBarang.size(); i++) total += (hargaBarang.get(i) * jumlahBarang.get(i));
-        if (String.valueOf(total).length() > totalLength) hargaLength = String.valueOf(total).length();
-        for (int i = 0; i < namaBarang.size(); i++) System.out.printf("|%" + -noLength + "s|%" + -namaLength + "s|%" + -jumlahLength + "s|%" + -hargaLength + "s|%" + -totalLength + "s|\n", (i + 1), namaBarang.get(i), jumlahBarang.get(i), hargaBarang.get(i), (hargaBarang.get(i) * jumlahBarang.get(i)));
+        for (int i = 0; i < namaBarang.size(); i++) System.out.printf("|%" + -noLength + "s|%" + -namaLength + "s|%" + -jumlahLength + "s|%" + -hargaLength + "s|%" + -totalLength + "s|\n", ((i + 1) + "."), namaBarang.get(i), jumlahBarang.get(i), hargaBarang.get(i), (hargaBarang.get(i) * jumlahBarang.get(i)));
         System.out.println("=".repeat(columnsLength));
         System.out.printf("|%" + -(columnsLength - 3 - totalLength) + "s|%" + -totalLength + "s|\n", "Total", total);
-        System.out.println("=".repeat(columnsLength) + "\n" + "=".repeat(columnsLength));
+        System.out.println("=".repeat(columnsLength));
         System.out.printf("|%" + -(columnsLength - 3 - totalLength) + "s|", "Bayar");
         Scanner scn = new Scanner(System.in);
         bayar = scn.nextDouble();
-        System.out.println("\n" + "=".repeat(columnsLength));
+        System.out.println("=".repeat(columnsLength));
+        kembalian = bayar - total;
+        System.out.printf("|%" + -(columnsLength - 3 - totalLength) + "s|%" + -totalLength + "s|\n", "Kembalian", kembalian);
+        System.out.println("=".repeat(columnsLength));
         // while(true) {
         //     if(true) break;
         //     System.out.print("\nBayar     : " );
@@ -84,12 +88,24 @@ public class Explore {
         //     else break;
         // }
 
-        try (PrintWriter p = new PrintWriter(new FileOutputStream("output-text.txt", true))) {
-            p.println("Hello");
-        } catch (Exception e1) {
-            e1.printStackTrace();
+        // PrintWriter pw = new PrintWriter(new FileOutputStream("nota_pembelian.txt", true))
+        try (PrintWriter pw = new PrintWriter("nota_pembelian.txt")) {  
+            if (String.valueOf(bayar).length() > totalLength) totalLength = String.valueOf(bayar).length();
+            columns = String.format("|%" + -noLength + "s|%" + -namaLength + "s|%" + -jumlahLength + "s|%" + -hargaLength + "s|%" + -totalLength + "s|", "NO", "Nama Barang", "Jumlah", "Harga Satuan", "Harga Total");
+            columnsLength = columns.length();
+            pw.printf("\n%" + (columnsLength/2-6) + "sNOTA PEMBELIAN\n\n" + "Tanggal : " + LocalDate.now() + "\n", "");
+            pw.println("=".repeat(columnsLength) + "\n" + columns + "\n" + "=".repeat(columnsLength));
+            for (int i = 0; i < namaBarang.size(); i++) pw.printf("|%" + -noLength + "s|%" + -namaLength + "s|%" + -jumlahLength + "s|%" + -hargaLength + "s|%" + -totalLength + "s|\n", ((i + 1) + "."), namaBarang.get(i), jumlahBarang.get(i), hargaBarang.get(i), (hargaBarang.get(i) * jumlahBarang.get(i)));
+            pw.println("=".repeat(columnsLength));
+            pw.printf("|%" + -(columnsLength - 3 - totalLength) + "s|%" + -totalLength + "s|\n", "Total", total);
+            pw.println("=".repeat(columnsLength));
+            pw.printf("|%" + -(columnsLength - 3 - totalLength) + "s|%" + -totalLength + "s|\n", "Bayar", bayar);
+            pw.println("=".repeat(columnsLength));
+            pw.printf("|%" + -(columnsLength - 3 - totalLength) + "s|%" + -totalLength + "s|\n", "Kembalian", kembalian);
+            pw.println("=".repeat(columnsLength));
+            pw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        
-        System.out.println("Kembalian : " + (bayar - total));
     }
 }
