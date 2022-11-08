@@ -6,6 +6,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Explore",
+            "request": "launch",
+            "mainClass": "Explore",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Coba3",
+            "request": "launch",
+            "mainClass": "Coba3",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Coba2",
+            "request": "launch",
+            "mainClass": "Coba2",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Soal1_1",
+            "request": "launch",
+            "mainClass": "Soal1_1",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Soal1",
+            "request": "launch",
+            "mainClass": "Soal1",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Soal2",
+            "request": "launch",
+            "mainClass": "Soal2",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Gue",
+            "request": "launch",
+            "mainClass": "Gue",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas7_3",
+            "request": "launch",
+            "mainClass": "Tugas7_3",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas7_1",
+            "request": "launch",
+            "mainClass": "Tugas7_1",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
