@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Coba4",
+            "request": "launch",
+            "mainClass": "Coba4",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
             "name": "Launch Explore",
             "request": "launch",
             "mainClass": "Explore",
