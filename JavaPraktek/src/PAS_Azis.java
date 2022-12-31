@@ -99,7 +99,7 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikA[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "A"+(i+1)+(j+1));
-                    matrikA[i][j] = scn.nextInt();
+                    matrikA[i][j] = scn.nextDouble();
                 }
             }
             System.out.println("\nMasukkan Elemen Matrik B :");
@@ -107,7 +107,7 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikB[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "B"+(i+1)+(j+1));
-                    matrikB[i][j] = scn.nextInt();
+                    matrikB[i][j] = scn.nextDouble();
                 }
             }
             if (opsi == 4) {
