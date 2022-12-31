@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 // PAS Pratik Pemrograman 1
@@ -99,7 +100,8 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikA[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "A"+(i+1)+(j+1));
-                    matrikA[i][j] = scn.nextDouble();
+                  // matrikA[i][j] = scn.nextDouble();
+                    matrikA[i][j] = new Random().nextInt(10);
                 }
             }
             System.out.println("\nMasukkan Elemen Matrik B :");
@@ -107,7 +109,8 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikB[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "B"+(i+1)+(j+1));
-                    matrikB[i][j] = scn.nextDouble();
+                  //  matrikB[i][j] = scn.nextDouble();
+                    matrikB[i][j] = new Random().nextInt(10);
                 }
             }
             if (opsi == 4) {
@@ -260,10 +263,10 @@ public class PAS_Azis {
         int column = matrikA.length > matrikB.length ? matrikA.length : matrikB.length;
         
         for (int i = 0; i < column; i++) {
-            int gap = column % 2 == 0 ? column/2-1: column/2;
-            int rowA = matrikA.length == column ? 0 : gap - (matrikA.length % 2 == 0 ? matrikA.length/2: matrikA.length/2);
-            int rowB = matrikB.length == column ? 0 : gap - (matrikB.length % 2 == 0 ? matrikB.length/2: matrikB.length/2);
-            int rowC = matrikC.length == column ? 0 : gap - (matrikC.length % 2 == 0 ? matrikC.length/2: matrikC.length/2);
+            int gap = column/2;
+            int rowA = matrikA.length == column ? 0 : gap - matrikA.length/2;
+            int rowB = matrikB.length == column ? 0 : gap - matrikB.length/2;
+            int rowC = matrikC.length == column ? 0 : gap - matrikC.length/2;
             
             if (((i - rowA) < matrikA.length && (i - rowA) >= 0)) {
                 System.out.print("|");
