@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 // PAS Pratik Pemrograman 1
@@ -100,8 +99,7 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikA[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "A"+(i+1)+(j+1));
-                  // matrikA[i][j] = scn.nextDouble();
-                    matrikA[i][j] = new Random().nextInt(10);
+                    matrikA[i][j] = scn.nextDouble();
                 }
             }
             System.out.println("\nMasukkan Elemen Matrik B :");
@@ -109,8 +107,7 @@ public class PAS_Azis {
                 for (int j = 0; j < matrikB[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "B"+(i+1)+(j+1));
-                  //  matrikB[i][j] = scn.nextDouble();
-                    matrikB[i][j] = new Random().nextInt(10);
+                    matrikB[i][j] = scn.nextDouble();
                 }
             }
             if (opsi == 4) {
