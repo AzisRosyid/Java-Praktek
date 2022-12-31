@@ -1,40 +1,18 @@
-import java.util.Scanner;
-
 public class Tugas7_1 {
     public static void main(String[] args) {
-        int jumlahMahasiswa = 10;
-        System.out.println("=== Program Menghitung nilai rata-rata dari " + jumlahMahasiswa + " orang mahasiswa ===\n");
- 
-        final String[] jenisNilai = {"Keaktifan", "Tugas", "Ujian Tengah Semester", "Ujian Akhir Semester"}; 
-        final int[] persetaseNilai = {10, 15, 25, 50};
-        int[][] nilai = new int[jenisNilai.length][jumlahMahasiswa];
-        for(int i = 0; i < jumlahMahasiswa; i++) for(int j= 0; j < jenisNilai.length; j++) {
-            int a;
-            while(true) {
-                try {
-                    System.out.printf("Masukkan Nilai " + jenisNilai[j] + ", Mahasiswa ke-" + (i + 1) + " : ");
-                    Scanner scnA = new Scanner(System.in);
-                    a = scnA.nextInt();
-                    break;
-                } catch (Exception e) {
-                    System.out.println("\nInput harus berformat nomor!\n");
-                }
-            }
+        char[] KODE = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'L', 'N', 'T'};
+        char[][] KOTA = new char[10][12];
 
-            nilai[j][i] = a;
-            if(j == jenisNilai.length - 1) System.out.println();
+        String[] city = {"banten", "jakarta", "bandung", "cirebon", "bogor", "pekalongan", "semarang", "surabaya", "malang", "tegal"};
+        for (int i = 0; i < city.length; i++) {
+            char[] cityName = city[i].toUpperCase().toCharArray();
+            for (int j = 0; j < cityName.length; j++) KOTA[i][j] = cityName[j];
         }
 
-        double totalRata = 0;
-        System.out.println("\n=== Nilai Hasil ===");
-        for(int i = 0; i < jenisNilai.length; i++) {
-            double jumlah = 0, rata = 0;
-            for(int j = 0; j < jumlahMahasiswa; j++) jumlah += nilai[i][j];
-            rata = jumlah/(double)jumlahMahasiswa;
-            System.out.println("Total Nilai " + jenisNilai[i] + " : " + jumlah + ", " + "rata-rata : " + rata);
-            totalRata += rata * ((double)persetaseNilai[i] / 100.0);
+        for (int i = 0; i < KODE.length; i++) {
+            String cityName = "";
+            for (char j: KOTA[i]) cityName += j + " ";
+            System.out.printf("%s | %s\n", KODE[i], cityName);
         }
-        
-        System.out.println("Total Nilai rata-rata : " + totalRata);
     }
 }

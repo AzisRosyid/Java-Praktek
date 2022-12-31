@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3530), pid=13336, tid=7472
+#  Out of Memory Error (os_windows.cpp:3530), pid=1720, tid=1884
 #
 # JRE version:  (18.0.2.1+1) (build )
 # Java VM: Java HotSpot(TM) 64-Bit Server VM (18.0.2.1+1-1, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -27,16 +27,16 @@
 
 ---------------  S U M M A R Y ------------
 
-Command Line: -XX:+ShowCodeDetailsInExceptionMessages Coba
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages Tugas8_5
 
-Host: AMD Ryzen 7 2700X Eight-Core Processor         , 16 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.746)
-Time: Fri Oct 28 19:08:44 2022 SE Asia Standard Time elapsed time: 0.022531 seconds (0d 0h 0m 0s)
+Host: AMD Ryzen 7 2700X Eight-Core Processor         , 16 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.1028)
+Time: Tue Dec 13 19:17:40 2022 SE Asia Standard Time elapsed time: 0.017644 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x000001b56543dfc0):  JavaThread "Unknown thread" [_thread_in_vm, id=7472, stack(0x0000004229e00000,0x0000004229f00000)]
+Current thread (0x000001e18bab2800):  JavaThread "Unknown thread" [_thread_in_vm, id=1884, stack(0x000000a730000000,0x000000a730100000)]
 
-Stack: [0x0000004229e00000,0x0000004229f00000]
+Stack: [0x000000a730000000,0x000000a730100000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x6993aa]
 V  [jvm.dll+0x7f46dd]
@@ -58,29 +58,29 @@ V  [jvm.dll+0x40dc3f]
 V  [jvm.dll+0x40f611]
 C  [jli.dll+0x526b]
 C  [ucrtbase.dll+0x29363]
-C  [KERNEL32.DLL+0x1244d]
+C  [KERNEL32.DLL+0x1247d]
 C  [ntdll.dll+0x5dfb8]
 
 
 ---------------  P R O C E S S  ---------------
 
 Threads class SMR info:
-_java_thread_list=0x00007fffcf5de550, length=0, elements={
+_java_thread_list=0x00007fff6c08e550, length=0, elements={
 }
 
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x000001b5656737e0 WorkerThread "GC Thread#0" [stack: 0x0000004229f00000,0x000000422a000000] [id=18820]
-  0x000001b57f768060 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000422a000000,0x000000422a100000] [id=9040]
-  0x000001b56567e730 WorkerThread "G1 Conc#0" [stack: 0x000000422a100000,0x000000422a200000] [id=23472]
+  0x000001e18bb65f00 WorkerThread "GC Thread#0" [stack: 0x000000a730100000,0x000000a730200000] [id=14896]
+  0x000001e1b7bd9070 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000a730200000,0x000000a730300000] [id=26100]
+  0x000001e1b7bda200 WorkerThread "G1 Conc#0" [stack: 0x000000a730300000,0x000000a730400000] [id=19508]
 
-[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffcee0a877]
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff6b8ba877]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x000001b56543b040] Heap_lock - owner thread: 0x000001b56543dfc0
+[0x000001e18bab1860] Heap_lock - owner thread: 0x000001e18bab2800
 
 Heap address: 0x0000000601000000, size: 8176 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
 
@@ -95,7 +95,7 @@ Heap:
  garbage-first heap   total 0K, used 0K [0x0000000601000000, 0x0000000800000000)
   region size 4096K, 0 young (0K), 0 survivors (0K)
 
-[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffcf1f1839]
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff6bca1839]
 
 GC Heap History (0 events):
 No events
@@ -119,51 +119,51 @@ VM Operations (0 events):
 No events
 
 Events (1 events):
-Event: 0.012 Loaded shared library C:\Program Files\Java\jdk-18.0.2.1\bin\java.dll
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-18.0.2.1\bin\java.dll
 
 
 Dynamic libraries:
-0x00007ff67ef00000 - 0x00007ff67ef10000 	C:\Program Files\Java\jdk-18.0.2.1\bin\java.exe
-0x00007ff882f30000 - 0x00007ff883144000 	C:\WINDOWS\SYSTEM32\ntdll.dll
-0x00007ff881830000 - 0x00007ff8818f2000 	C:\WINDOWS\System32\KERNEL32.DLL
-0x00007ff880670000 - 0x00007ff880a0d000 	C:\WINDOWS\System32\KERNELBASE.dll
-0x00007ff8804d0000 - 0x00007ff8805e1000 	C:\WINDOWS\System32\ucrtbase.dll
-0x00007ff871180000 - 0x00007ff87119a000 	C:\Program Files\Java\jdk-18.0.2.1\bin\VCRUNTIME140.dll
-0x00007ff86fc50000 - 0x00007ff86fc68000 	C:\Program Files\Java\jdk-18.0.2.1\bin\jli.dll
-0x00007ff881a20000 - 0x00007ff881ace000 	C:\WINDOWS\System32\ADVAPI32.dll
-0x00007ff881430000 - 0x00007ff8814d7000 	C:\WINDOWS\System32\msvcrt.dll
-0x00007ff8815e0000 - 0x00007ff881684000 	C:\WINDOWS\System32\sechost.dll
-0x00007ff8828e0000 - 0x00007ff8829f5000 	C:\WINDOWS\System32\RPCRT4.dll
-0x00007ff880ef0000 - 0x00007ff88109a000 	C:\WINDOWS\System32\USER32.dll
-0x00007ff85fdd0000 - 0x00007ff86005e000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.436_none_a94247dbc10d8414\COMCTL32.dll
-0x00007ff880c40000 - 0x00007ff880c66000 	C:\WINDOWS\System32\win32u.dll
-0x00007ff881ad0000 - 0x00007ff881af9000 	C:\WINDOWS\System32\GDI32.dll
-0x00007ff880a10000 - 0x00007ff880b22000 	C:\WINDOWS\System32\gdi32full.dll
-0x00007ff876080000 - 0x00007ff87608a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
-0x00007ff880b30000 - 0x00007ff880bca000 	C:\WINDOWS\System32\msvcp_win.dll
-0x00007ff882a00000 - 0x00007ff882a32000 	C:\WINDOWS\System32\IMM32.DLL
-0x00007ff872560000 - 0x00007ff87256c000 	C:\Program Files\Java\jdk-18.0.2.1\bin\vcruntime140_1.dll
-0x00007ff80f360000 - 0x00007ff80f3ed000 	C:\Program Files\Java\jdk-18.0.2.1\bin\msvcp140.dll
-0x00007fffceb00000 - 0x00007fffcf711000 	C:\Program Files\Java\jdk-18.0.2.1\bin\server\jvm.dll
-0x00007ff881900000 - 0x00007ff881908000 	C:\WINDOWS\System32\PSAPI.DLL
-0x00007ff876040000 - 0x00007ff876074000 	C:\WINDOWS\SYSTEM32\WINMM.dll
-0x00007ff83ade0000 - 0x00007ff83ade9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
-0x00007ff881560000 - 0x00007ff8815d1000 	C:\WINDOWS\System32\WS2_32.dll
-0x00007ff87f430000 - 0x00007ff87f448000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
-0x00007ff870af0000 - 0x00007ff870afa000 	C:\Program Files\Java\jdk-18.0.2.1\bin\jimage.dll
-0x00007ff8779f0000 - 0x00007ff877c1e000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
-0x00007ff8810a0000 - 0x00007ff88142a000 	C:\WINDOWS\System32\combase.dll
-0x00007ff882800000 - 0x00007ff8828d7000 	C:\WINDOWS\System32\OLEAUT32.dll
-0x00007ff863250000 - 0x00007ff863282000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
-0x00007ff8805f0000 - 0x00007ff88066b000 	C:\WINDOWS\System32\bcryptPrimitives.dll
-0x00007ff850690000 - 0x00007ff8506b5000 	C:\Program Files\Java\jdk-18.0.2.1\bin\java.dll
+0x00007ff7f5240000 - 0x00007ff7f5250000 	C:\Program Files\Java\jdk-18.0.2.1\bin\java.exe
+0x00007ff84fed0000 - 0x00007ff8500e4000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff84ebd0000 - 0x00007ff84ec92000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff84d4e0000 - 0x00007ff84d87d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff84d3c0000 - 0x00007ff84d4d1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff816180000 - 0x00007ff816198000 	C:\Program Files\Java\jdk-18.0.2.1\bin\jli.dll
+0x00007ff813a80000 - 0x00007ff813a9a000 	C:\Program Files\Java\jdk-18.0.2.1\bin\VCRUNTIME140.dll
+0x00007ff84de00000 - 0x00007ff84deae000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff84eb20000 - 0x00007ff84ebc7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff84dcc0000 - 0x00007ff84dd64000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff84f840000 - 0x00007ff84f955000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff84e670000 - 0x00007ff84e81d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff838180000 - 0x00007ff83840e000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.436_none_a94247dbc10d8414\COMCTL32.dll
+0x00007ff84d390000 - 0x00007ff84d3b6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff84ddd0000 - 0x00007ff84ddf9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff84db30000 - 0x00007ff84dc42000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff84d2f0000 - 0x00007ff84d38a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff843d30000 - 0x00007ff843d3a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff84ee90000 - 0x00007ff84eec2000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff83c2a0000 - 0x00007ff83c2ac000 	C:\Program Files\Java\jdk-18.0.2.1\bin\vcruntime140_1.dll
+0x00007fffe1e00000 - 0x00007fffe1e8d000 	C:\Program Files\Java\jdk-18.0.2.1\bin\msvcp140.dll
+0x00007fff6b5b0000 - 0x00007fff6c1c1000 	C:\Program Files\Java\jdk-18.0.2.1\bin\server\jvm.dll
+0x00007ff84ee70000 - 0x00007ff84ee78000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff843450000 - 0x00007ff843484000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff83bdc0000 - 0x00007ff83bdc9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff84e570000 - 0x00007ff84e5e1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff84c400000 - 0x00007ff84c418000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff83a0a0000 - 0x00007ff83a0aa000 	C:\Program Files\Java\jdk-18.0.2.1\bin\jimage.dll
+0x00007ff8449c0000 - 0x00007ff844bee000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff84f960000 - 0x00007ff84fcea000 	C:\WINDOWS\System32\combase.dll
+0x00007ff84ea40000 - 0x00007ff84eb17000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff82fd40000 - 0x00007ff82fd72000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff84dab0000 - 0x00007ff84db2b000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff803dc0000 - 0x00007ff803de5000 	C:\Program Files\Java\jdk-18.0.2.1\bin\java.dll
 
 dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
 symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-18.0.2.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.436_none_a94247dbc10d8414;C:\Program Files\Java\jdk-18.0.2.1\bin\server
 
 VM Arguments:
 jvm_args: -XX:+ShowCodeDetailsInExceptionMessages 
-java_command: Coba
+java_command: Tugas8_5
 java_class_path (initial): C:\Users\Alex_Carl\AppData\Roaming\Code\User\workspaceStorage\8fc2cf8042da9f67ae59f267ca66bdab\redhat.java\jdt_ws\Java-Praktek_6c46b8e3\bin
 Launcher Type: SUN_STANDARD
 
@@ -197,7 +197,7 @@ Log output configuration:
 
 Environment Variables:
 JAVA_HOME=C:\Program Files\Java\jdk-18.0.2.1
-PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Zulu\zulu-8\bin\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Alex_Carl\AppData\Local\Programs\Python\Python310;C;C:\Program Files\Git\cmd;C:\Program Files\Gradle\gradle-7.4.2\bin;C:\Users\Alex_Carl\flutter\bin;C:\Program Files\dotnet\;C:\Users\Alex_Carl\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Alex_Carl\AppData\Local\Programs\Python\Python310\;C:\Users\Alex_Carl\AppData\Local\Microsoft\WindowsApps;C:\Users\Alex_Carl\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\Alex_Carl\AppData\Roaming\npm;C:\Users\Alex_Carl\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.2\bin;;C:\Users\Alex_Carl\.dotnet\tools
+PATH=C:\Users\Alex_Carl\anaconda3;C:\Users\Alex_Carl\anaconda3\Library\mingw-w64\bin;C:\Users\Alex_Carl\anaconda3\Library\usr\bin;C:\Users\Alex_Carl\anaconda3\Library\bin;C:\Users\Alex_Carl\anaconda3\Scripts;C:\Users\Alex_Carl\anaconda3\bin;C:\Users\Alex_Carl\anaconda3\condabin;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Zulu\zulu-8\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\150\DTS\Binn;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn;C:\Program Files\Azure Data Studio\bin;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C;C:\Program Files\Git\cmd;C:\Program Files\Gradle\gradle-7.4.2\bin;C:\Users\Alex_Carl\flutter\bin;C:\Program Files\dotnet;.;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Alex_Carl\AppData\Local\Microsoft\WindowsApps;C:\Users\Alex_Carl\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\Alex_Carl\AppData\Roaming\npm;C:\Users\Alex_Carl\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.1.2\bin;.;C:\Program Files\JetBrains\PyCharm Community Edition 2022.2.3\bin;.;C:\Users\Alex_Carl\.dotnet\tools
 USERNAME=Alex_Carl
 LANG=en_GB.UTF-8
 OS=Windows_NT
@@ -208,14 +208,14 @@ PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
 ---------------  S Y S T E M  ---------------
 
 OS:
- Windows 11 , 64 bit Build 22621 (10.0.22621.746)
-OS uptime: 2 days 3:59 hours
+ Windows 11 , 64 bit Build 22621 (10.0.22621.1028)
+OS uptime: 1 days 21:15 hours
 Hyper-V role detected
 
 CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 8 stepping 2 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
 
-Memory: 4k page, system-wide physical 32696M (14875M free)
-TotalPageFile size 32696M (AvailPageFile size 246M)
+Memory: 4k page, system-wide physical 32696M (16196M free)
+TotalPageFile size 32696M (AvailPageFile size 362M)
 current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
 current process commit charge ("private bytes"): 71M, peak: 583M
 

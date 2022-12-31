@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tugas11_234",
+            "request": "launch",
+            "mainClass": "Tugas11_234",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas10_pas_pt",
+            "request": "launch",
+            "mainClass": "Tugas10_pas_pt",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch coba5",
+            "request": "launch",
+            "mainClass": "coba5",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "QuickSort",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas8_5",
+            "request": "launch",
+            "mainClass": "Tugas8_5",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas8_1",
+            "request": "launch",
+            "mainClass": "Tugas8_1",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
             "name": "Launch Coba4",
             "request": "launch",
             "mainClass": "Coba4",
