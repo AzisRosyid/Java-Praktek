@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 // PAS Pratik Pemrograman 1
@@ -7,20 +6,21 @@ import java.util.Scanner;
 // Prodi   : Pendidikan Teknik Informatika (E2)
 // NIM     : 22520241011
 // ---------------------------------------------
-public class Tugas10_pas_pt {
-    private static double[][] matrikA;
-    private static double[][] matrikB;
-    private static double[][] matrikC;
+public class PAS_Azis {
     private final static String[] options = {"Perjumlahan", "Pengurangan", "Perkalian", "Pembagian"};
 
-    public static void main(String[] args) throws Exception {
+    private static double[][] matrikA, matrikB, matrikC;
+    private static String operator = "";
+
+    public static void main(String[] args) {
+        program:
         while (true) {
-            System.out.println("Program Operasi Dua Matriks :\n1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Selesai");
-            String operator = "";
+            System.out.println("==== < Program Operasi Dua Matriks > ==== \nOpsi Program :\n1. Penjumlahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian\n5. Selesai");
             Scanner scn = new Scanner(System.in);
             System.out.print("\nPilih Opsi : ");
             int opsi = scn.nextInt();
-            if (opsi == 5) break;
+            if (opsi != 1 && opsi != 2 && opsi != 3 && opsi != 4 && opsi != 5) continue program;
+            if (opsi == 5) break program;
             konfigurasiOrdo(opsi);
             konfigurasiElemen(opsi);
 
@@ -45,11 +45,11 @@ public class Tugas10_pas_pt {
                     break;
             }
 
-            printMatrik(opsi, operator);
+            printMatriks(opsi);
             System.out.print("\nTekan Enter untuk Melanjutkan! ");
-            System.in.read();
+            Scanner scne = new Scanner(System.in);
+            scne.nextLine();
             System.out.println("\n");
-            
         }
     }
 
@@ -99,8 +99,7 @@ public class Tugas10_pas_pt {
                 for (int j = 0; j < matrikA[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "A"+(i+1)+(j+1));
-                    // matrikA[i][j] = scn.nextInt();
-                    matrikA[i][j] = new Random().nextInt(10);
+                    matrikA[i][j] = scn.nextInt();
                 }
             }
             System.out.println("\nMasukkan Elemen Matrik B :");
@@ -108,14 +107,13 @@ public class Tugas10_pas_pt {
                 for (int j = 0; j < matrikB[0].length; j++) {
                     Scanner scn = new Scanner(System.in);
                     System.out.printf("Masukkan elemen %s : ", "B"+(i+1)+(j+1));
-                    // matrikB[i][j] = scn.nextInt();
-                    matrikB[i][j] = new Random().nextInt(10);
+                    matrikB[i][j] = scn.nextInt();
                 }
             }
             if (opsi == 4) {
                 double det = getDeterminan(matrikB, matrikB.length);
                 if (det == 0)
-                    System.out.printf("\nDeterminan pada matrik B harus tidak sama dengan nol untuk melakukan operasi %s! (Determinan matrik B: %s)\n", options[opsi], det);
+                    System.out.printf("\nDeterminan pada matrik B harus tidak sama dengan nol untuk melakukan operasi %s! (Determinan matrik B: %s)\n", options[opsi - 1], elementF(det));
                 else 
                     break;
             } else 
@@ -194,7 +192,7 @@ public class Tugas10_pas_pt {
         int index[] = new int[n];
         for (int i = 0; i < n; ++i)
             b[i][i] = 1;
-        gaussian(a, index);
+        gauss(a, index);
         for (int i = 0; i < n - 1; ++i)
             for (int j = i + 1; j < n; ++j)
                 for (int k = 0; k < n; ++k)
@@ -212,7 +210,7 @@ public class Tugas10_pas_pt {
         return x;
     }
 
-    public static void gaussian(double a[][], int index[]) {
+    public static void gauss(double a[][], int index[]) {
         int n = index.length;
         double c[] = new double[n];
         for (int i = 0; i < n; ++i)
@@ -249,7 +247,7 @@ public class Tugas10_pas_pt {
         }
     }
 
-    private static void printMatrik(int opsi, String operator) {
+    private static void printMatriks(int opsi) {
         System.out.printf("\n\nHasil Operasi %s Matrik :\nA %s B = C\n", options[opsi-1], operator);
         int[][] spc = setSpc(new double[][][] {matrikA, matrikB, matrikC});
         int spcA = spc[0][0];

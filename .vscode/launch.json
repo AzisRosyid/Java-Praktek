@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PAS_Azis",
+            "request": "launch",
+            "mainClass": "PAS_Azis",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Anisa_matriks",
+            "request": "launch",
+            "mainClass": "Anisa_matriks",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tugas11",
+            "request": "launch",
+            "mainClass": "Tugas11",
+            "projectName": "Java-Praktek_6c46b8e3"
+        },
+        {
+            "type": "java",
             "name": "Launch Tugas11_234",
             "request": "launch",
             "mainClass": "Tugas11_234",

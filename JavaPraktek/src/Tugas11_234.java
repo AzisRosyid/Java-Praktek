@@ -13,7 +13,7 @@ public class Tugas11_234 {
             for (int j = 0; j < n; j++)
                 a[i][j] = input.nextDouble();
 
-        double d[][] = invert(a);
+        double d[][] = invertOf(a);
 
         System.out.println("The inverse is: ");
         for (int i = 0; i < n; ++i) {
@@ -25,14 +25,14 @@ public class Tugas11_234 {
         input.close();
     }
 
-    public static double[][] invert(double a[][]) {
+    public static double[][] invertOf(double a[][]) {
         int n = a.length;
         double x[][] = new double[n][n];
         double b[][] = new double[n][n];
         int index[] = new int[n];
         for (int i = 0; i < n; ++i)
             b[i][i] = 1;
-        gaussian(a, index);
+        gaussianMethod(index, a);
         for (int i = 0; i < n - 1; ++i)
             for (int j = i + 1; j < n; ++j)
                 for (int k = 0; k < n; ++k)
@@ -50,7 +50,7 @@ public class Tugas11_234 {
         return x;
     }
 
-    public static void gaussian(double a[][], int index[]) {
+    public static void gaussianMethod(int index[], double a[][]) {
         int n = index.length;
         double c[] = new double[n];
         for (int i = 0; i < n; ++i)
